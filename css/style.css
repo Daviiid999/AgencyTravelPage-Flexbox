@@ -1,0 +1,1797 @@
+:root {
+    --main-color: #f74141;
+    --secundary-color: #0e0e0e;
+}
+
+/* Social Media Icons*/
+@font-face {
+    font-family: 'icomoon';
+    src: url("../fonts/icons/icomoon.eot?srf3rx");
+    src: url("../fonts/icons/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icons/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icons/icomoon.woff?srf3rx") format("woff"), url("../fonts/icons/icomoon.svg?srf3rx#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* Reset de estilos para quitar márgenes y rellenos predeterminados del body y otros elementos */
+body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+}
+  
+/* ------------------------- ESTILOS GENERALES -------------------------- */
+  
+body {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.466);
+    background: #0e0e0e;
+}
+  
+::selection {
+    color: #fff;
+    background: var(--main-color);
+}
+  
+h2{
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: bold;
+    font-size: 37px;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+}
+  
+h3 {
+    margin-bottom: 10px;
+    color:#dfdede
+}
+  
+h4 {
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+  
+p {
+    padding-bottom: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    color: rgb(189, 188, 188);
+    font-size: 20px;
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(247, 65, 65, 0.2);
+    color: white;
+    padding: 10px 40px;
+    font-weight: inherit;
+    text-transform: uppercase;
+    font-size: 18px;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button::before,
+button::after {
+    content: "";
+    position: absolute;
+    background-color: #f74141;
+    width: 0;
+    height: 100%;
+    transition: width 0.7s ease;
+    z-index: -1; /* Mover los pseudo-elementos detrás del contenido del botón */
+}
+
+button::before {
+    left: 0;
+    top: 0;
+}
+
+button::after {
+    right: 0;
+    bottom: 0;
+}
+
+button:hover::before,
+button:hover::after {
+    width: 50%;
+}
+
+button:hover {
+    color: #fff;
+}
+
+  
+/* ----------------- HEADER -----------------*/
+  
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+}
+  
+.no-home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+}
+  
+/* Pseudo-elemento para oscurecer el fondo */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+  
+.noHome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* ----------------- NAV -----------------*/
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+  
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+}
+  
+.links-nav li {
+    margin-right: 20px;
+}
+  
+.links-nav a {
+    text-decoration: none;
+    color: #c9c9c9;
+    font-size: 20px;
+    position: relative;
+}
+  
+.links-nav a:hover {
+    color: #ffffff;
+}
+
+.links-nav a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+  
+.links-nav a:hover:after,
+.links-nav li.active a:after {
+    width: 100%;
+}
+  
+.aWhite {
+    color: #ffffff !important;
+}
+
+/* -------------- Javascript Nav --------------- */
+  
+/* Ponerle el fondo de la pagina al nav cuando se hace scroll */
+nav.scrolled {
+    background: #0e0e0e;
+}
+
+/* Menu Hamburguesa */
+
+.abrir-menu, .cerrar-menu {
+    display: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 50px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.abrir-menu::before, .cerrar-menu::before,
+.abrir-menu::after, .cerrar-menu::after {
+    background-color: transparent;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+/* ------------------------- FOOTER -------------------------- */
+
+footer {
+    display: flex;
+    
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10% 0 10%;
+}
+
+.footer-column-img {
+    flex: 2;
+    padding-right: 4%;
+}
+
+.logo-img-footer {
+    padding-top: 190px;
+}
+  
+.footer-column {
+    flex: 2;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 120px;
+}
+  
+.footer-column a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.466);
+}
+  
+.footer-column a:hover {
+    color: var(--main-color);
+}
+  
+.footer-column-description {
+    flex: 4;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 120px;
+    margin-right: 45px;
+}
+  
+.footer-column-info {
+    flex: 2;
+    margin: 120px 10px 10px 30px;
+    padding: 10px;
+}
+  
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-column-info ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-column li {
+    margin-bottom: 5px;
+}
+  
+.footer-center {
+    flex-basis: 100%;
+    margin-top: 80px;
+    margin-bottom: 140px;
+    text-align: center;
+}
+  
+.footer-center small {
+    margin: 0;
+}
+  
+.social-icons {
+    margin-top: 20px;
+}
+  
+.social-icon {
+    font-size: 20px;
+    color: var(--main-color);
+    margin-right: 10px;
+    text-decoration: none;
+}
+  
+.social-icon:hover {
+    color: #fff;
+}
+
+/* ------------------------ HOME ------------------------*/
+
+/* ----------------- Hero -----------------*/
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #f7f7f7;
+}
+
+/* ----------------- Seccion 1 -----------------*/
+
+.imgs-texst-section1,  .imgs-texst-section2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.imgs-texst-section1 {
+    padding: 130px 0px 0px;
+}
+
+.imgs-texst-content {
+    display: flex;
+    width: 100%;
+}
+
+.imgs-texst-content-mid {
+    display: flex;
+    width: 100%;
+}
+
+.column1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.column2 {
+    display: flex;
+    flex: 1;
+}
+
+.column1 img {
+    width: 100%;
+    height: auto;
+}
+
+.text-up, .text-mid, .text-down {
+    padding: 20px 150px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-mid {
+    margin-top: 45px;
+}
+
+.text-down {
+    margin-top: 15px;
+}
+
+.text-up h3, .text-down h3 {
+    text-align: center;
+}
+
+.text-up p, .text-mid p, .text-down p {
+    font-size: 18px;
+    line-height: 25px;
+    color:#bebebe
+}
+
+/* ----------------- Seccion 2 ----------------- */
+
+.three-imgs-section {
+    text-align: center;
+}
+
+.three-imgs-section .container-imgs {
+    position: relative;
+    height: 80vmax;
+}
+
+.three-imgs-section .img {
+    display: inline-block;
+    width: 40%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.three-imgs-section .img img {
+    width: 100%;
+    height: auto;
+}
+
+.three-imgs-section .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.three-imgs-section .overlay button {
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.three-imgs-section .overlay h3 {
+    font-size: 40px;
+}
+
+.three-imgs-section .img-up {
+    position: absolute;
+    top: 15%;
+    right: 13%;
+    z-index: 1;
+}
+
+.three-imgs-section .img-mid {
+    position: absolute;
+    top: 30%;
+    left: 13%;
+    z-index: 2;
+}
+
+.three-imgs-section .img-down {
+    position: absolute;
+    bottom: 20%;
+    right: 13%;
+    z-index: 3;
+}
+
+.three-imgs-section .img:hover {
+    transform: scale(1.2);
+    z-index: 4;
+}
+
+.three-imgs-section .img:hover .overlay {
+    opacity: 1;
+}
+
+/* ----------------- Seccion 3 -----------------*/
+
+.important-countries {
+    text-align: center;
+    padding: 0 0 90px 0;
+}
+
+.important-countries h2{
+    margin-bottom: 0;
+}
+
+.countries {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3% 15% 3% 15%;
+    display: flex;
+    width: 100%;
+}
+
+.city1 {
+    flex: 0 0 45%;
+    text-align: center;
+    padding: 2% 6% 2% 2%;
+}
+
+.city2 {
+    flex: 0 0 45%;
+    text-align: center;
+    padding: 2%;
+}
+
+.city1 button, .city2 button {
+    margin-top: 20px;
+}
+
+.img-countries {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 10px;
+}
+
+.city1 h3, .city2 h3 {
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+}
+
+.city1 p, .city2 p {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+/* ----------------- Seccion 4 -----------------*/
+
+.images-title-section {
+    text-align: center;
+    padding: 100px 0px 70px 0px;
+}
+
+.images-seccion {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 2% 5% 4% 5%;
+}
+
+.image {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.image img {
+    width: 600px;
+    height: 600px;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    margin: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.overlay p {
+    margin: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* --------------- Seccion 5 -------------- */
+
+.mouse-hover-section {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 50px 0 150px 0;
+}
+
+.image-container1, .image-container2 {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.img-hover {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+}
+
+.hover-section-overlay {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: calc(100% - 20px); /* Resta el padding para que tenga el mismo ancho que la imagen-container1 ya que le habia puesto 20px de padding a la derecha y al overlay por alguna razon no se le aplicaba*/
+    height: 100%;
+    background-image: url(img/home_hollywoodFondo.jpg);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    border-radius: 12px;
+    transition: opacity 0.5s ease;
+}
+
+.hover-section-overlay p {
+    padding: 0 20% 4% 20%;
+}
+
+.image-container1:hover img, .image-container2:hover img {
+    transform: translateY(-100%);
+}
+
+.image-container1:hover .hover-section-overlay, .image-container2:hover .hover-section-overlay {
+    opacity: 1;
+}
+
+/* --------------- Separador -------------- */
+
+.separator {
+    position: relative;
+    width: 100%;
+    height: 530px;
+    color: rgb(209, 208, 208);
+    text-align: center;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+  
+.separator::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+  
+.separator-section-content {
+    max-width: 700px;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo oscuro */
+    line-height: 30px;
+}
+
+.separator-section-content p {
+    font-size: 23px;
+}
+
+.separator-section-content button {
+    margin-top: 40px;
+}
+
+/* ------------------------ HOW TO COME ------------------------ */
+
+/* ----------------- Seccion 1 ----------------- */
+
+.choose-section {
+    padding: 8.4% 20.9% 6.5%;
+}
+  
+.choose {
+    text-align: center;
+    padding: 0 20%;
+}
+
+.separator-choose {
+    position: relative;
+    width: 100%;
+    height: 530px;
+    color: rgb(209, 208, 208);
+    text-align: center;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ----------------- Seccion 2 ----------------- */
+
+.page-section {
+    padding: 130px 0;
+    text-align: center;
+}
+  
+.container-blog {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+  
+.blog-block {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.blog-item {
+    flex: 1;
+    margin: 0 10px;
+}
+  
+.blog-image {
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+}
+  
+.blog-content {
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.030);
+}
+  
+.blog-content p{
+    text-align: left;
+}
+  
+.link-blog {
+    display: flex;
+    justify-content: center;
+}
+  
+.link-blog a {
+    text-decoration: none;
+    color: var(--main-color);
+    background: transparent;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-blog a:hover {
+    background-color: var(--main-color);
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ----------------- Seccion 3 ----------------- */
+
+.transport-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.main-title {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.inner-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.transport-section-button {
+    padding: 0 0 25px;
+}
+
+.left-block img{
+    width: 400px;
+    height: auto;
+}
+
+.right-block {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.map-size {
+    width: 800px;
+    height: 670px;
+}
+
+/* ------------------------ ROUTES ------------------------ */
+
+/* --------------- Seccion 1 -------------- */
+
+.container-routes {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.blog-item-routes1,
+.blog-item-routes2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(249, 249, 249, 0.030);
+}
+
+.blog-item-routes1 {
+    margin-right: 50px;
+}
+
+.blog-block-routes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.blog-image-routes {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-section-routes1,
+.page-section-routes2 {
+    display: flex;
+    
+    text-align: center;
+}
+
+.page-section-routes1{
+    padding: 150px 0 50px;
+}
+
+.page-section-routes2{
+    padding: 0 0 150px;
+}
+
+.page-section-routes1 p,
+.page-section-routes2 p{
+    padding-top: 10px;
+    text-align: left;
+}
+
+.blog-content-routes {
+    padding: 30px 50px 0px 40px;
+}
+
+.link-blog-routes {
+    display: flex;
+    flex: 1;
+    padding: 20px 0 40px 33%;
+    flex-direction: column;
+    justify-content: end;
+
+}
+
+.link-blog-routes a {
+    width: 40%;
+    align-items: center;
+    text-decoration: none;
+    color: var(--main-color);
+    background: transparent;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-blog-routes a:hover {
+    background-color: var(--main-color);
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* --------------- Seccion 2 -------------- */
+
+.routes-section {
+    text-align: center;
+    padding: 60px 0 160px;
+}
+
+.main-title-routes {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.inner-block-routes1,  .inner-block-routes2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.left-block-routes {
+    flex: 2;
+    text-align: left;
+    padding: 0 60px 0 20px;
+}
+
+.left-block-routes h3 {
+    font-size: 32px;
+}
+
+.routes-section-button {
+    padding: 0 0 25px;
+}
+
+.left-block-routes img{
+    width: 400px;
+    height: auto;
+}
+
+.right-block-routes {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.right-block-routes img{
+    width: 900px;
+}
+
+.line-routes1 {
+    padding: 20px 0 5px;
+    max-width: 5%;
+    height: auto;
+}
+
+.line-routes2 {
+    padding: 5px 0 20px;
+    max-width: 5%;
+    height: auto;
+}
+
+.routes-section-button2 {
+    padding: 50px 0 0;
+}
+
+/* ------------------------ CONTACT ------------------------ */
+
+/* --------------- Seccion 1 -------------- */
+
+.important-offices {
+    text-align: center;
+    padding: 7% 0 0;
+}
+
+.important-offices h2{
+    margin-bottom: 0;
+}
+
+.offices {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3% 15% 3% 15%;
+    display: flex;
+    width: 100%;
+}
+
+.last-offices {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3% 15% 0 15%;
+    display: flex;
+    width: 100%;
+}
+
+.office1 {
+    flex: 0 0 45%;
+    text-align: center;
+    padding: 2% 6% 0 2%;
+}
+
+.office2 {
+    flex: 0 0 45%;
+    text-align: center;
+    padding: 2% 2% 0;
+}
+
+.office1 button, .office2 button {
+    margin-top: 20px;
+}
+
+.img-offices {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 10px;
+}
+
+.office1 h3, .office2 h3 {
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+}
+
+.office1 p, .office2 p {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.line-offices {
+    padding: 30px 0;
+    max-width: 11%;
+    height: auto;
+}
+
+/* ----------------- Seccion 2 ----------------- */
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7% 7%;
+}
+
+.contact-form {
+    flex: 3;
+    padding: 20px;
+    margin: 20px 100px 45px 20px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #c9c9c9;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    background-color: #8f8f8f00;
+    padding: 12px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.contact-form-h2 {
+    text-align: center;
+}
+
+.contact-form-button {
+    text-align: center;
+}
+
+.text-section-form {
+    flex: 2;
+    padding: 0px 100px 20px;
+}
+
+.text-section-form img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ----------------- Separador ----------------- */
+
+.separator-contact {
+    position: relative;
+    width: 100%;
+    height: 530px;
+    color: rgb(209, 208, 208);
+    text-align: center;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+  
+.separator-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ----------------- Seccion 3 ----------------- */
+
+.alternating-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 5% 5% 15%;
+}
+
+.alternating-section h2 {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px 20px;
+}
+
+.alternating-section1, .alternating-section2 {
+    display: flex;
+}
+
+.alternating-section2 {
+    padding-top: 10%;
+}
+
+.section-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+    margin: 0 5%;
+    background-color: #1d1d1d;
+    border-radius: 6px;
+}
+
+.text-block,
+.image-block {
+    flex: 1;
+    padding: 20px;
+    justify-content: end;
+}
+
+.text-block {
+    order: 1;
+    text-align: left;
+}
+
+.image-block {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------- Contact Mapa -------------- */
+
+.location-section {
+    text-align: center;
+    padding: 0 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additional-content2 {
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    padding-top: 30px;
+}
+
+
+@media screen and (max-width: 1500px){
+
+    /* ----------------- Imagenes a los lados ----------------- */
+
+    .column1 {
+        flex: 2;
+    }
+
+    .column2 {
+        flex: 3;
+    }
+
+    .text-up, .text-mid, .text-down {
+        padding: 20px 50px 20px 50px;
+    }
+
+    /* ----------------- 4 imagenes con overlay ----------------- */
+
+    .images-seccion {
+        flex-wrap: wrap;
+        padding: 2% 2% 4% 2%;
+    }
+    
+    .overlay {
+        top: 4%;
+        left: 0;
+    }
+
+    .image {
+        padding-top: 2%;
+    }
+
+    /* ----------------- Intro transportes ----------------- */
+
+    .choose {
+        padding: 0 10%;
+    }
+
+    /* ----------------- Tips How to come ----------------- */
+
+    .section-block {
+        margin: 0 2% 0 0%;
+    }
+
+    .alternating-section2 {
+        padding-top: 5%;
+    }
+
+    /* ----------------- Oficinas ----------------- */
+
+    .line-offices {
+        display: none;
+    }
+
+    .last-offices {
+        padding-bottom: 10%;
+    }
+
+    /* ----------------- Formulario Contact ----------------- */
+
+    .contact-section {
+        padding: 7% 2%;
+    }
+}   
+
+
+@media screen and (max-width: 1350px) {
+
+    /* ----------------- Ciudades ----------------- */
+
+    .countries {
+        flex-direction: column;
+    }
+
+    .city1 {
+        padding: 2% 17% 10%;
+    }
+
+    .city2 {
+        padding: 0% 17%;
+    }
+
+    /* ----------------- Oficinas ----------------- */
+
+    .offices {
+        flex-direction: column;
+    }
+
+    .last-offices {
+        flex-direction: column;
+    }
+
+    .office1 {
+        padding: 2% 17% 10%;
+    }
+
+    .office2 {
+        padding: 0% 17%;
+    }
+
+    /* ----------------- 4 imagenes con overlay ----------------- */
+
+    .image img {
+        width: 600px;
+        height: 600px;
+    }
+
+    .overlay {
+        top: 3%;
+        left: 0;
+    }
+
+    /* ----------------- Footer ----------------- */
+
+    .footer-columns {
+        margin: 0 2% 0 2%;
+    }
+
+    /* ----------------- Routes Left Rigth ----------------- */
+    
+    .inner-block-routes1 {
+        flex-direction: column-reverse;
+    }
+
+    .inner-block-routes2 {
+        flex-direction: column;
+    }
+
+    .right-block-routes {
+        padding: 1% 0 4%;
+    }
+
+    .left-block-routes {
+        padding: 0 20%;
+    }
+
+    /* ----------------- Formulario Contact ----------------- */
+
+    .contact-section {
+        padding: 7% 0%;
+    }
+}  
+
+@media screen and (max-width: 1250px){
+
+    /* ----------------- Imagenes a los lados ----------------- */
+
+    .imgs-texst-content {
+        flex-direction: column;
+    }
+
+    .imgs-texst-content-mid {
+        flex-direction: column-reverse;
+    }
+
+    .column1 {
+        flex-direction: row;
+    }
+
+    .column1 img {
+        padding: 0 100px 0;
+        width: 65%;
+    }
+
+    .text-up, .text-mid, .text-down {
+        padding: 5% 18% 15% 18%;
+    }
+
+    /* ----------------- Ciudades ----------------- */
+
+    .city1 {
+        padding: 2% 10% 10%;
+    }
+
+    .city2 {
+        padding: 0% 10%;
+    }
+
+    /* ----------------- Oficinas ----------------- */
+
+    .office1 {
+        padding: 2% 10% 10%;
+    }
+
+    .office2 {
+        padding: 0% 10%;
+    }
+
+    /* ----------------- Puertos y aeropuertos ----------------- */
+    
+    .inner-block {
+        flex-direction: column;
+    }
+
+    .left-block {
+        flex-direction: row;
+        padding: 0 10% 5%;
+    }
+
+    .right-block {
+        padding: 0;
+    }
+
+    .left-block-content1 {
+        padding: 6% 4% 8% 0%;
+    }
+
+    .left-block-content2 {
+        padding: 2% 4% 8% 0%;
+    }
+
+    .map-size {
+        width: 950px;
+        height: 450px;
+    }
+
+    /* ----------------- Routes ----------------- */
+
+    .blog-block-routes {
+        flex-direction: column;
+    }
+
+    .blog-item-routes1 {
+        margin: 0 20%;
+    }
+
+    .blog-item-routes2 {
+        margin: 45px 20% 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    /* ----------------- Footer ----------------- */
+
+    .footer-columns {
+        margin: 0 7% 0 7%;
+    }
+
+    .footer-column-description {
+        flex: 1 0 40%;
+    }
+
+    .footer-column {
+        flex: 0 0 17%;
+    }
+
+    /* ----------------- Hero How to come ----------------- */
+    .h1-hero {
+        font-size: 70px !important;
+    }
+
+    /* ----------------- Intro transportes ----------------- */
+
+    .choose {
+        padding: 0 0;
+    }
+
+    /* ----------------- Eleccion de transporte ----------------- */
+
+    .blog-block {
+        flex-direction: column;
+        padding: 0 20%;
+    }
+
+    .blog-item {
+        padding-bottom: 10%;
+    }
+
+    /* ----------------- Formulario Contact ----------------- */
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .text-section-form {
+        flex: 2;
+        width: 80%;
+        padding: 5% 0;
+    }
+    
+    .contact-form {
+        width: 77%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 900px){
+
+    /* ----------------- Nav despleglable ----------------- */
+
+    .abrir-menu, .cerrar-menu {
+        display: block;
+    }
+
+    .links-nav {
+        opacity: 0;
+        visibility: hidden;
+
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        padding: 50px; 
+        background-color: var(--secundary-color);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .nav-container {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        transition: all 0.4s ease-in-out;
+        background-color: transparent;
+    }
+
+    .obscurice {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: block;
+    }
+
+    .links-nav.visible {
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: left;
+        line-height: 50px;
+    }
+
+    /* ----------------- Tres imagenes flotantes ----------------- */
+
+    .three-imgs-section .container-imgs {
+        height: 100%;
+        padding-bottom: 20%;
+    }
+
+    .three-imgs-section .img {
+        width: 75%;
+    }
+
+    .three-imgs-section .overlay {
+        transform: translate(-50%, -41%);
+        opacity: 1;
+    }
+
+    .three-imgs-section .img-up,
+    .three-imgs-section .img-mid,
+    .three-imgs-section .img-down {
+        position: relative;
+        top: 0%;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        z-index: 1;
+        padding: 5% 0 0;
+    }
+
+    /* ----------------- Ciudades ----------------- */
+
+    .city1 {
+        padding: 2% 0% 20%;
+    }
+
+    .city2 {
+        padding: 0% 0% 10%;
+    }
+
+    /* ----------------- Oficinas ----------------- */
+
+    .office1 {
+        padding: 2% 0% 20%;
+    }
+
+    .office2 {
+        padding: 0% 0% 10%;
+    }
+
+    /* ----------------- 4 imagenes con overlay ----------------- */
+
+    .overlay {
+        top: 1.5%;
+        opacity: 1;
+    }
+
+    /* ----------------- Imagenes animacion raton encima ----------------- */
+
+    .hover-section-overlay {
+        position: relative;
+        opacity: 1;
+    }
+
+    .hover-section-overlay p {
+        padding: 0 10% 4% 10%;
+    }
+
+    .image-container1:hover img, .image-container2:hover img {
+        transform: translateY(0%);
+    }
+
+    .img-hover {
+        padding: 15% 5% 3%;
+        width: 90%;
+    }
+    .image-container1, .image-container2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    /* ----------------- Separadores ----------------- */
+
+    .separator-section-content p{
+        padding: 0 4%;
+    }
+
+    /* ----------------- Puertos y aeropuertos ----------------- */
+
+    .left-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right-block {
+        display: none;
+    }
+
+    .left-block-content1 {
+        padding: 6% 4% 1% 0%;
+    }
+
+    .left-block-content2 {
+        padding: 2% 4% 1% 0%;
+    }
+
+    /* ----------------- Tips How to come ----------------- */
+
+    .alternating-section1, .alternating-section2 {
+        flex-direction: column;
+    }
+
+    .section-block {
+        margin: 0;
+    }
+
+    .section-block-separating {
+        margin-bottom: 4%;
+    }
+
+    /* ----------------- Routes ----------------- */
+
+    .blog-item-routes1 {
+        margin: 0 15%;
+    }
+
+    .blog-item-routes2 {
+        margin: 45px 15% 0;
+    }
+
+    /* ----------------- Routes Right Left ----------------- */
+
+    .right-block-routes img {
+        width: 530px;
+    }
+
+    /* ----------------- Separador Contact ----------------- */
+
+    .separator-contact {
+        margin: 12% 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    /* ----------------- Imagenes a los lados ----------------- */
+
+    .column1 img {
+        width: 90%;
+        padding: 0;
+    }
+
+
+    .text-up, .text-mid, .text-down {
+        padding: 5% 6% 15% 6%;
+    }
+
+    /* ----------------- Footer ----------------- */
+
+    .footer-column-img {
+        flex: 1;
+    }
+
+    .footer-column-description {
+        margin-right: 0;
+        padding-right: 5px;
+    }
+
+    .footer-column {
+        flex: 0 0 40%;
+        text-align: center;
+    }
+
+    .footer-column-info {
+        text-align: center;
+    }
+
+    /* ----------------- Intro transportes ----------------- */
+
+    .choose-section {
+        padding: 8.4% 10% 6.5%;
+
+    } 
+
+    /* ----------------- Eleccion de transporte ----------------- */
+
+    .blog-block {
+        flex-direction: column;
+        padding: 0 7%;
+    }
+
+    /* ----------------- Routes ----------------- */
+
+    .blog-item-routes1 {
+        margin: 0 5%;
+    }
+
+    .blog-item-routes2 {
+        margin: 45px 5% 0;
+    }
+
+    .link-blog-routes {
+        padding: 20px 0 40px 28%;
+    }
+
+    .link-blog-routes a {
+        width: 50%;     
+    }
+
+    /* ----------------- Routes Left Rigth ----------------- */
+
+    .main-title-routes {
+        margin: 0 1% 10%;
+    }
+
+    .right-block-routes {
+        padding: 3% 0 4%;
+    }
+
+    .left-block-routes {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    /* ----------------- Routes Right Left ----------------- */
+
+    .right-block-routes img {
+        width: 465px;
+    }
+
+    .left-block-routes {
+        padding: 0 5%;
+    }
+
+    /* ----------------- Ciudades ----------------- */
+
+    .countries {
+        padding: 3% 5%;
+    }
+
+    /* ----------------- Oficinas ----------------- */
+
+    .offices {
+        padding: 3% 5%;
+    }
+
+    .last-offices {
+        padding: 3% 5%;
+    }
+}
